@@ -1,0 +1,361 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(to bottom, var(--background-color), var(--light-gray));
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 5rem; /* Add space for the fixed navigation */
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+}
+
+.tab.active {
+  background: rgba(var(--primary-color-rgb), 0.2);
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.tabContent {
+  min-height: 400px;
+}
+
+/* Overview Tab */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+}
+
+.statTitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.statDescription {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.recentActivity {
+  margin-bottom: 3rem;
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activityItem {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.activityItem:hover {
+  background-color: var(--medium-gray);
+}
+
+.activityIcon {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.activityDetails {
+  flex-grow: 1;
+}
+
+.activityTitle {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.activityStatus {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
+
+.activityDate {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
+
+.recommendations {
+  margin-bottom: 2rem;
+}
+
+.recommendationList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.recommendationItem {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommendationItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recommendationIcon {
+  font-size: 2.5rem;
+  margin-right: 1.5rem;
+}
+
+.recommendationTitle {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.recommendationReason {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
+
+/* Modules Tab */
+.moduleList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.moduleItem {
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.moduleHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.moduleIcon {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.moduleTitle {
+  flex-grow: 1;
+  font-size: 1.2rem;
+}
+
+.moduleStatus {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  background-color: var(--medium-gray);
+}
+
+.moduleStatus.completed {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.moduleProgressBar {
+  height: 8px;
+  background-color: var(--medium-gray);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.moduleDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.moduleDetail {
+  font-size: 0.9rem;
+}
+
+.detailLabel {
+  color: var(--dark-gray);
+  margin-right: 0.5rem;
+}
+
+/* Badges Tab */
+.badgeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.badgeCard {
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.badgeCard:hover {
+  transform: translateY(-5px);
+}
+
+.badgeIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.badgeTitle {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.badgeDescription {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+}
+
+.badgeEarned {
+  font-size: 0.8rem;
+  color: var(--dark-gray);
+  padding-top: 1rem;
+  border-top: 1px solid var(--medium-gray);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  color: var(--dark-gray);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .container {
+    padding-top: 4rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .recommendationList {
+    grid-template-columns: 1fr;
+  }
+
+  .moduleDetails {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .tabs {
+    gap: 0.5rem;
+  }
+
+  .tab {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

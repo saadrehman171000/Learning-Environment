@@ -1,0 +1,668 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(to bottom, var(--background-color), var(--light-gray));
+}
+
+.toolHeader {
+  margin-bottom: 3rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.backLink:hover {
+  transform: translateX(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.toolInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.toolIconLarge {
+  font-size: 4rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  width: 120px;
+  height: 120px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.toolIconLarge:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.toolDetails {
+  flex: 1;
+}
+
+.toolName {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.toolDescription {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  max-width: 800px;
+  opacity: 0.9;
+}
+
+.toolContent {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  min-height: 400px;
+  animation: slideUp 0.5s ease-out;
+}
+
+.toolFeatures {
+  margin: 4rem 0;
+}
+
+.toolFeatures h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.featuresList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.featureItem:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.featureIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .toolInfo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .toolName {
+    font-size: 2.5rem;
+  }
+
+  .toolDescription {
+    font-size: 1.1rem;
+  }
+
+  .featuresList {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .toolHeader {
+    margin-bottom: 2rem;
+  }
+
+  .toolName {
+    font-size: 2rem;
+  }
+
+  .toolIconLarge {
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
+  }
+
+  .toolContent {
+    padding: 1.5rem;
+  }
+
+  .featuresList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolInfo {
+    padding: 1.5rem;
+  }
+
+  .toolName {
+    font-size: 1.8rem;
+  }
+
+  .toolDescription {
+    font-size: 1rem;
+  }
+
+  .featureItem {
+    padding: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Flashcards Tool Styles */
+.flashcardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.flashcardControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.controlButton {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--light-gray);
+  border: none;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controlButton:hover:not(:disabled) {
+  background-color: var(--medium-gray);
+}
+
+.controlButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cardCounter {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.flashcard {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flashcardFront,
+.flashcardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+}
+
+.flashcardFront {
+  background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+  color: var(--text-color);
+}
+
+.flashcardBack {
+  background: linear-gradient(135deg, var(--accent-light), var(--primary-light));
+  color: var(--text-color);
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped .flashcardFront {
+  transform: rotateY(180deg);
+}
+
+.flashcard.flipped .flashcardBack {
+  transform: rotateY(0);
+}
+
+.flashcardFront p,
+.flashcardBack p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.flipPrompt {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.addCardForm {
+  background-color: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.addCardForm h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  resize: vertical;
+}
+
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.addButton {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+}
+
+.emptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: var(--light-gray);
+  border-radius: var(--border-radius);
+  text-align: center;
+  color: var(--text-light);
+}
+
+/* Notes Tool Styles */
+.notesContainer {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  height: calc(100vh - 250px);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.notesSidebar {
+  background: rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebarHeader h3 {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.newNoteButton {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.newNoteButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.notesList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.noteItem {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.noteItem:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(2px);
+}
+
+.noteItem.active {
+  background: rgba(var(--primary-color-rgb), 0.2);
+  border-left: 3px solid var(--primary-color);
+}
+
+.noteItem h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.noteItem p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+.noteTags {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.noteTag {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.noteEditor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.editorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.noteTitle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.noteTitle:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.editorControls {
+  display: flex;
+  gap: 1rem;
+}
+
+.noteContent {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+  resize: none;
+}
+
+.noteContent:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+  .notesContainer {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .notesSidebar {
+    height: 300px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .noteEditor {
+    padding: 1rem;
+  }
+}
+
+/* Related Tools Section */
+.relatedTools {
+  margin-top: 4rem;
+}
+
+.relatedTools h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.relatedToolsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.relatedToolCard {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.relatedToolCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.relatedToolIcon {
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.relatedToolInfo h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.relatedToolInfo p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+/* Additional Responsive Styles */
+@media (max-width: 768px) {
+  .toolMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .metaInfo {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .relatedToolsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .relatedToolCard {
+    padding: 1rem;
+  }
+
+  .relatedToolIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .metaItem {
+    font-size: 0.8rem;
+  }
+
+  .relatedToolInfo h3 {
+    font-size: 1.1rem;
+  }
+
+  .relatedToolInfo p {
+    font-size: 0.8rem;
+  }
+}

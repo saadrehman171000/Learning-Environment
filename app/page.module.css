@@ -1,0 +1,481 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+  padding: calc(var(--header-height) + 2rem) 0 4rem;
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(239, 71, 111, 0.05));
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  animation: fadeInUp 1s ease;
+}
+
+.description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-light);
+  max-width: 600px;
+  animation: fadeInUp 1s ease 0.2s;
+  animation-fill-mode: both;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease 0.4s;
+  animation-fill-mode: both;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  animation: fadeInUp 1s ease 0.6s;
+  animation-fill-mode: both;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.heroImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1s ease 0.8s;
+  animation-fill-mode: both;
+}
+
+.mainImage {
+  max-width: 100%;
+  height: auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Features Section */
+.features {
+  padding: 5rem 0;
+  background-color: var(--background-alt);
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.sectionDescription {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: var(--text-light);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featureIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--light-gray);
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.featureCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.featureCard p {
+  color: var(--text-light);
+  flex-grow: 1;
+}
+
+/* Pathways Section */
+.pathways {
+  padding: 5rem 0;
+}
+
+.pathwayGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.pathwayCard {
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(239, 71, 111, 0.05));
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(67, 97, 238, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pathwayCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.pathwayHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.pathwayIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--light-gray);
+  margin-right: 1rem;
+  color: var(--primary-color);
+}
+
+.pathwayHeader h3 {
+  font-size: 1.5rem;
+}
+
+.pathwayCard p {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  flex-grow: 1;
+}
+
+.pathwayMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.pathwayLink {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: transform 0.2s ease;
+  align-self: flex-start;
+}
+
+.pathwayLink:hover {
+  transform: translateX(5px);
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 5rem 0;
+  background-color: var(--background-alt);
+}
+
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.testimonialCard {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+}
+
+.testimonialContent {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: var(--text-light);
+  flex-grow: 1;
+}
+
+.testimonialContent p {
+  position: relative;
+  padding: 0 1rem;
+}
+
+.testimonialContent p::before,
+.testimonialContent p::after {
+  content: '"';
+  font-size: 2rem;
+  color: var(--primary-light);
+  position: absolute;
+}
+
+.testimonialContent p::before {
+  left: -0.5rem;
+  top: -1rem;
+}
+
+.testimonialContent p::after {
+  right: -0.5rem;
+  bottom: -1.5rem;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+}
+
+.authorAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+
+.authorInfo h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.authorInfo p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* CTA Section */
+.cta {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+}
+
+.ctaContent {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.ctaContent p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta .btn {
+  background-color: white;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+}
+
+.cta .btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--background-alt);
+  padding: 4rem 0 2rem;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.footerTagline {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+}
+
+.footerLinkGroup h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footerLinkGroup a {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--text-light);
+  transition: color 0.2s ease;
+}
+
+.footerLinkGroup a:hover {
+  color: var(--primary-color);
+}
+
+.footerBottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--medium-gray);
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .heroContent {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .heroText {
+    flex: 1;
+  }
+
+  .heroImage {
+    flex: 1;
+  }
+
+  .actions {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: calc(var(--header-height) + 1rem);
+    padding-bottom: 3rem;
+  }
+
+  .heroImage {
+    margin-top: 1rem;
+  }
+
+  .mainImage {
+    max-width: 80%;
+  }
+
+  .features,
+  .pathways,
+  .testimonials,
+  .cta {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footerLinks {
+    grid-template-columns: 1fr;
+  }
+}
