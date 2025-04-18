@@ -1,0 +1,243 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .pageHeader {
+    margin-bottom: 2rem;
+  }
+  
+  .backLink {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .backLink:hover {
+    transform: translateX(-5px);
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 800px;
+  }
+  
+  .formContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+  
+  .postForm {
+    background-color: var(--background-alt);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  .formLabel {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .required {
+    color: var(--danger-color);
+  }
+  
+  .optional {
+    color: var(--text-light);
+    font-weight: normal;
+    font-size: 0.9rem;
+  }
+  
+  .formInput,
+  .formSelect,
+  .formTextarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .formInput:focus,
+  .formSelect:focus,
+  .formTextarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+  }
+  
+  .formTextarea {
+    resize: vertical;
+    min-height: 200px;
+  }
+  
+  .formHelp {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+  }
+  
+  .formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .cancelButton {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+  
+  .cancelButton:hover {
+    background-color: var(--medium-gray);
+  }
+  
+  .submitButton {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+  }
+  
+  .submitButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .formSidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .sidebarCard {
+    background-color: var(--background-alt);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .sidebarCard h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--medium-gray);
+  }
+  
+  .guidelinesList {
+    padding-left: 1.5rem;
+  }
+  
+  .guidelinesList li {
+    margin-bottom: 0.75rem;
+    color: var(--text-light);
+  }
+  
+  .formattingTips {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .formattingTip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius-sm);
+  }
+  
+  .tipCode {
+    font-family: monospace;
+    background-color: var(--background-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .tipResult {
+    font-size: 0.85rem;
+    color: var(--text-light);
+  }
+  
+  @media (max-width: 992px) {
+    .formContainer {
+      grid-template-columns: 1fr;
+    }
+  
+    .formSidebar {
+      order: -1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem;
+    }
+  
+    .formActions {
+      flex-direction: column-reverse;
+    }
+  
+    .cancelButton,
+    .submitButton {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .postForm {
+      padding: 1.5rem;
+    }
+  
+    .formattingTip {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+  
