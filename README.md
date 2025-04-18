@@ -42,8 +42,8 @@ SR is a modern, interactive learning platform built with Next.js, TypeScript, an
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/eduverse.git
-cd eduverse
+git clone https://github.com/saadrehman171000/Learning-Environment
+cd Learning-Environment
 ```
 
 2. Install dependencies:

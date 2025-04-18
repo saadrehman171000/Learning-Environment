@@ -45,7 +45,7 @@ export default function Home() {
             </div>
             <div className={styles.heroImage}>
               <img
-                src="/placeholder.svg?height=500&width=500"
+                src="/Learning.webp"
                 alt="Learning illustration"
                 className={styles.mainImage}
                 width={500}
